@@ -1,0 +1,109 @@
+body{
+	background:#edf3f8;
+}
+input{
+	width:40px;
+	height:25px;
+	border:1px solid lightgray;
+}
+input[type="submit"]{
+	width:80px;
+	height:25px;
+	border:1px solid lightgray;
+	margin:10px;
+}
+td{
+	text-align:right;
+}
+body{
+	font-family:tahoma;
+}
+.head{
+    border-radius:100%;
+    border:5px solid gray;
+    width:30px;
+    height:30px;
+    background-color:lightgray;
+    margin-left:25%;
+    opacity:1;
+}
+.body{
+    margin-left:33%;
+    background:gray;
+    width:5px;
+    height:90px;
+    opacity:1;
+}
+
+.righthand{
+	margin-top:-79px;
+	margin-left:24%;
+    background:gray;
+    width:5px;
+    height:50px;
+	-moz-transform:    rotate(+33eg);
+    -webkit-transform: rotate(+33deg);
+    -ms-transform:     rotate(+33deg);
+    -o-transform:      rotate(+33deg);
+    opacity:1;
+}
+
+.lefthand{
+	margin-top:-49px;
+	margin-left:42%;
+    background:gray;
+    width:5px;
+    height:50px;
+	-moz-transform:    rotate(-33eg);
+    -webkit-transform: rotate(-33deg);
+    -ms-transform:     rotate(-33deg);
+    -o-transform:      rotate(-33deg);
+    opacity:1;
+}
+
+.leftleg{
+	margin-top:25px;
+	margin-left:25%;
+    background:gray;
+    width:5px;
+    height:50px;
+	-moz-transform:    rotate(+33eg);
+    -webkit-transform: rotate(+33deg);
+    -ms-transform:     rotate(+33deg);
+    -o-transform:      rotate(+33deg);
+    opacity:1;
+}
+
+.rightleg{
+	margin-top:-49px;
+	margin-left:42%;
+    background:gray;
+    width:5px;
+    height:50px;
+	-moz-transform:    rotate(-33eg);
+    -webkit-transform: rotate(-33deg);
+    -ms-transform:     rotate(-33deg);
+    -o-transform:      rotate(-33deg);
+    opacity:1;
+}
+.hang{
+	margin-top:-183px;
+	margin-left:42%;
+    background:black;
+    width:5px;
+    height:90px;
+	-moz-transform:    rotate(70eg);
+    -webkit-transform: rotate(70deg);
+    -ms-transform:     rotate(70deg);
+    -o-transform:      rotate(70deg);
+    opacity:1;
+}
+
+.foot{
+	margin-top:100px;	
+}
+
+
+
+
+

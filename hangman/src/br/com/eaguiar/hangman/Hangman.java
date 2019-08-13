@@ -24,7 +24,7 @@ public class Hangman {
 	
 /**
  * @author Aguiar, Emiliano 		
- * @return random word String
+ * @return random word String from XML file
  */
 	public String getXML() {
 		List<String> list = new ArrayList<String>();
@@ -70,26 +70,26 @@ public class Hangman {
 	public HttpServletRequest check(HttpServletRequest request){
 		int numberOfAttempts = Integer.parseInt(request.getParameter("pAttempts").toString());
 		HttpSession session = request.getSession(true);
-		String word = (String)session.getAttribute("word");
-		String sTry = (String) request.getParameter("pValue").toUpperCase();
+		String word = (String)session.getAttribute("word"); // correct word 
+		String sTry = (String) request.getParameter("pValue").toUpperCase(); // get the letter type
 		String html = "";
-		String wordAnswered = "";
+		String answerWord = "";
 		boolean rightAnswer = false;
 		
 		for(int a=0 ; a < word.length() ; a++) {
-			if(sTry.charAt(0) == word.charAt(a)) { // right answer
-				html+="<input type=text readonly name=letter" + a + " value=" + sTry + ">";
-				wordAnswered+=sTry;
+			if(sTry.charAt(0) == word.charAt(a)) { // check if letter contains in word
+				html+="<input type=text readonly name=letter" + a + " value=" + sTry + ">"; // build html inputs with correct letters
+				answerWord+=sTry;
 				rightAnswer = true;
 			}else {
-				html+="<input type=text readonly name=letter" + a + " value=" + request.getParameter("letter" + a) + ">";
-				wordAnswered+=request.getParameter("letter" + a);
+				html+="<input type=text readonly name=letter" + a + " value=" + request.getParameter("letter" + a) + ">"; // build html with correct letters already answered
+				answerWord+=request.getParameter("letter" + a); // join all letters already answered
 			}
 		}
-		if(!rightAnswer) {
+		if(!rightAnswer) { //in case of wrong answer
 			numberOfAttempts++;
 		} 
-		if(victory(wordAnswered,word)) {
+		if(victory(answerWord,word)) { // check if word is correct
 			request.setAttribute("win", "yes");
 		}
 		request.setAttribute("attempts", numberOfAttempts);
@@ -98,16 +98,17 @@ public class Hangman {
 		return request;
 	}
 	
-	public boolean victory(String wordAnswer, String wordRight) {
-		if(wordRight.toUpperCase().trim().equals(wordAnswer.toUpperCase().trim())) {
+	/**
+	 *  Method to verify if answered word is correct
+	 **/
+	public boolean victory(String answerWord, String rightWord) {
+		if(rightWord.toUpperCase().trim().equals(answerWord.toUpperCase().trim())) {
 			return true;
 		}
 		
 		return false;
 	}
 	
-	
-
 	
 
 }

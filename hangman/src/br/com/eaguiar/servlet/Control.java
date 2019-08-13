@@ -26,7 +26,6 @@ public class Control extends HttpServlet {
 		
 		if("Start".equals(request.getParameter("sAction")) || "New Game".equals(request.getParameter("sAction"))) {
 			String word = new Hangman().getXML();
-			System.out.println(word);
 			session.setAttribute("word", word); 
 			request.setAttribute("attempts", 0); 
 			request.setAttribute("letters", new Hangman().buildInputs(word));
